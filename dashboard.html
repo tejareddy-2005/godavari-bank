@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accounts | Godavari Bank (Demo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link 500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel=href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;"stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body data-page="dashboard">
+<nav class="navbar navbar-expand-lg gb-nav">
+  <div class="container">
+    <a class="navbar-brand" href="dashboard.html"><span class="gb-mark">G</span>Godavari Bank</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link active" href="dashboard.html">Accounts</a></li>
+        <li class="nav-item"><a class="nav-link " href="transfer.html">Transfer money</a></li>
+        <li class="nav-item"><a class="nav-link " href="transactions.html">Transactions</a></li>
+        <li class="nav-item"><button type="button" id="logoutBtn" class="btn btn-sm btn-outline-light ms-lg-3">Log out</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main class="container py-4 py-lg-5">
+  <header class="mb-4">
+    <h1 class="h2" id="greet">Welcome</h1>
+    <p class="text-muted mb-0">Here is where your money stands today.</p>
+  </header>
+  <div class="row g-4 mb-5">
+    <div class="col-lg-8">
+      <div class="gb-card gb-primary p-4 h-100">
+        <p class="mb-1 text-white-50">Savings account &middot; <span id="acctNo"></span></p>
+        <p class="gb-balance mb-3" id="balance">₹0.00</p>
+        <div class="d-flex flex-wrap gap-2">
+          <a href="transfer.html" class="btn btn-light btn-sm">Transfer money</a>
+          <a href="transactions.html" class="btn btn-outline-light btn-sm">View transactions</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <form id="depositForm" class="gb-card p-4 h-100" novalidate>
+        <h2 class="h5">Add demo money</h2>
+        <label for="depAmount" class="form-label">Amount (₹)</label>
+        <input type="number" id="depAmount" class="form-control" min="1" max="100000" step="0.01" required>
+        <div class="invalid-feedback">Enter an amount between ₹1 and ₹1,00,000.</div>
+        <button type="submit" class="btn btn-gb mt-3">Add money</button>
+        <div id="depMsg" class="small mt-2" role="status"></div>
+      </form>
+    </div>
+  </div>
+  <section>
+    <div class="d-flex justify-content-between align-items-baseline mb-3">
+      <h2 class="h4 mb-0">Recent transactions</h2>
+      <a href="transactions.html">See all</a>
+    </div>
+    <div class="gb-card p-0 overflow-hidden">
+      <div class="table-responsive">
+        <table class="table gb-table mb-0">
+          <thead><tr><th>Date</th><th>Description</th><th>Type</th><th class="text-end">Amount</th><th class="text-end">Balance</th></tr></thead>
+          <tbody id="recentBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="gb-footer">
+  <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+    <span>&copy; 2026 Godavari Bank. Demo project, not a real bank. No real money is used.</span>
+    <span><a href="dashboard.html">Accounts</a> &nbsp; <a href="transfer.html">Transfer</a> &nbsp; <a href="transactions.html">Transactions</a></span>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/store.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
